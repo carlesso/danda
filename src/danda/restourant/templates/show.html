@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Ristorante {{ r{% endblock %}
+
+{% block content %}
+<h1>Ristorante <b>{{r}}</b></h1>
+Indirizzo: {{r.indirizzo}}<br/>
+Numero di telefono: {{r.telefono}}</br>
+
+<h3>Listino Prezzi</h3>
+<table>
+	<tr>
+		<th>Piatto</th><th>Prezzo</th>
+	</tr>
+	{% for p in r.piatto_set.all %}
+	<tr>
+		<td>{{p.portata}}</td><td>{{p.prezzo|floatformat:2}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock content %}
