@@ -6,6 +6,8 @@ def index(request):
     ristoranti = Ristorante.objects.all()
     return render_to_response('index.html', RequestContext(request, {'ristoranti': ristoranti}))
 
+def about(request):
+    return render_to_response('about.html', RequestContext(request))
 def show(request, restourant_id):
     r = Ristorante.objects.get(id = restourant_id)
     return render_to_response('show.html', RequestContext(request,{'r': r}))

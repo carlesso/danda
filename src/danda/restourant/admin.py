@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import *
+from models import Ristorante, Portata, Piatto, Elemento, Ordine
 
 admin.site.register(Ristorante)
 admin.site.register(Portata)

@@ -1,3 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+  <title>{% block title %}Home Page{% endblock %} :: Danda</title>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="author" content="fullahead.org - studio7designs.com" />
+  <meta name="author" content="Marco Donà" />
+  <meta name="description" content="Danda - Aggregatore per ristoranti" />
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/html.css" media="screen, projection, tv " />
+  <style type="text/css">
+<!--
+.style2 {color: #627E9A}
+.style3 {color: #62CC3C}
+.style6 {color: #5C8096}
+.style7 {color: #888888}
+-->
+  </style>
+</head>
+<body>
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->   
+  <div id="header" class="width">
+  
+  <img src="{{ MEDIA_URL }}/images/logo.gif" alt="Your logo goes here"/>
+  
+    <ul>
+      <li><a href="{% url index %}">Home Page</a></li>
+      <li><a href="{% url about %}" class='last'>About</a></li>
+    </ul>
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">Ristoranti</span>
+          <span class="desc style7">Vedi lista Ristoranti</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Piatti</span>
+          <span class="desc style3">Vedi lista Pietanze</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Ordini</span>
+          <span class="desc">Vedi i tuoi Ordini passati</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contattaci</span>
+          <span class="desc">Facci sapere cosa pensi di noi!</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="page">
+	<div id="columns" class="widthPad">
+		<div class="floatLeft width73">
+			{% block content_left %}
+  
+		
+			      <h2>Sample <span class="dark">Thumbnails</span></h2>
+			
+			      <ul class="thumbs">
+			        <li>
+			          <a href="http://www.studio7designs.com" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="STUDIO7DESIGNS LOGO"/><span>STUDIO7DESIGNS </span></a>        </li>
+					 <li>
+			          <a href="" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="thumbnail"/><span>Image title sample </span></a>        </li>     
+			        <li>
+			          <a href="" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="thumbnail"/><span>Image title sample </span></a>        </li>
+			        <li>
+			          <a href="" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="thumbnail"/><span>Image title sample </span></a>        </li>
+			        <li>
+			          <a href="" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="thumbnail"/><span>Image title sample </span></a>        </li>
+			        <li>
+			          <a href="" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="thumbnail"/><span>Image title sample </span></a>        </li>
+			      
+			      </ul>
+			{% endblock %}
+    </div>
+    	
+    
+
+
+
+    <!-- Center news column -->
+   	
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+		{% block content_right %}
+				
+		       <h2>S7 <span class="dark">Resources</span></h2>
+		
+		      <ul class="submenu1">
+			  <li><a href="http://www.opensourcetemplates.org">Opensourcetemplates.org</a></li>
+		        <li><a href="http://www.studio7designs.com">Studio7designs.com </a></li>
+		        <li><a href="http://www.cssnature.org">CSS Nature Showcase</a></li>        
+		         <li><a href="http://www.vectorart.org">Vectorart.org</a></li>
+		         <li><a href="http://www.designloot.com">West Coast Designs</a></li>
+		      </ul>
+		
+		
+		      <h3>More CSS <span class="dark">resources</span></h3>
+		
+		          <ul class="submenu2">
+			  <li><a href="http://www.opensourcetemplates.org">Opensourcetemplates.org</a></li>
+		        <li><a href="http://www.studio7designs.com">Studio7designs.com </a></li>
+		        <li><a href="http://www.cssnature.org">CSS Nature Showcase</a></li>        
+		         <li><a href="http://www.vectorart.org">Vectorart.org</a></li>
+		         <li><a href="http://www.designloot.com">West Coast Designs</a></li>
+		      </ul>
+		      
+		       <ul class="submenu2">
+			  <li><a href="http://www.opensourcetemplates.org">Opensourcetemplates.org</a></li>
+		        <li><a href="http://www.studio7designs.com">Studio7designs.com </a></li>
+		        <li><a href="http://www.cssnature.org">CSS Nature Showcase</a></li>        
+		         <li><a href="http://www.vectorart.org">Vectorart.org</a></li>
+		         <li><a href="http://www.designloot.com">West Coast Designs</a></li>
+		      </ul>
+		        
+		     <ul class="submenu1">
+		        <li><a href="http://www.cssbeauty.com/">CSS Beauty</a></li>
+		        <li><a href="http://www.digg.com/">Digg</a></li>
+		        <li><a href="http://www.html-kit.com/favicon/">Create a Favicon! </a></li>
+		        <li><a href="http://www.cssplay.co.uk/ie/weft.html">CSS Play</a></li>
+		        <li><a href="http://www.mozilla.com/firefox/">Firefox</a></li>
+		      </ul>
+		
+		      <h3>Favorite <span class="dark">Links</span></h3>
+    	{% endblock %}
+    </div>
+    <!-- Right links column end -->
+
+
+    </div>
+    <!-- #columns end -->
+  </div>
+  <!-- #page end -->
+</div>
+<!-- #content end -->
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+  
+  <img src="{{ MEDIA_URL }}/{{ MEDIA_URL }}/images/logo.gif" alt="Danda"/>
+  
+    <ul>
+      <li><a href="">Sitemap</a></li>
+      <li><a href="/admin">Amministrazione</a></li>
+      <li><a href="http://www.studio7designs.com" class="last">Web Design by STUDIO7DESIGNS</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+
+</body>
+
+</html>
+
+{% comment %}
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="it">
     <head>
@@ -17,3 +199,4 @@
     	</div>
     </body>
 </html>
+{% endcomment %}

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Django settings for danda project.
 
+import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -27,8 +29,9 @@ TIME_ZONE = 'Europe/Rome'
 LANGUAGE_CODE = 'it-IT'
 USE_I18N = True
 USE_L10N = True
-MEDIA_ROOT = ''
-MEDIA_URL = ''
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'media/')
+MEDIA_URL = '/static'
+
 ADMIN_MEDIA_PREFIX = '/media/'
 SECRET_KEY = '-0k-qkbx@vob)o4a5@l3db+*x7phs3pla+d9a!32&5c-%tq)*d'
 TEMPLATE_LOADERS = (
