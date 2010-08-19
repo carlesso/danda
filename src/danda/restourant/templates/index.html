@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}About{% endblock %}
 
-{% block content %}
+{% block content_left %}
 <h2>I nostri ristoranti associati:</h2>
 <ul>
 {% for r in ristoranti %}
-	<li><a href="{% url show r.id %}">{{ r }}</a></li>
+	<li><a href="{% url show_restourant r.id %}">{{ r }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}

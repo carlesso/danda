@@ -46,15 +46,15 @@
 
     <ul>
       <li>
-        <a href="onecol.html" onfocus="blur()">
+        <a href="{% url show %}" onfocus="blur()">
           <span class="title ">Ristoranti</span>
           <span class="desc style7">Vedi lista Ristoranti</span>        </a>      </li>
       <li>
-        <a href="twocol_a.html" class="forum" onfocus="blur()">
+        <a href="{% url piatti %}" class="forum" onfocus="blur()">
           <span class="title ">Piatti</span>
           <span class="desc style3">Vedi lista Pietanze</span>        </a>      </li>
       <li>
-        <a href="twocol_b.html" onfocus="blur()">
+        <a href="{% url ordini %}" onfocus="blur()">
           <span class="title ">Ordini</span>
           <span class="desc">Vedi i tuoi Ordini passati</span>
         </a>
@@ -72,10 +72,7 @@
 	<div id="columns" class="widthPad">
 		<div class="floatLeft width73">
 			{% block content_left %}
-  
-		
-			      <h2>Sample <span class="dark">Thumbnails</span></h2>
-			
+  		      <h2>Sample <span class="dark">Thumbnails</span></h2>
 			      <ul class="thumbs">
 			        <li>
 			          <a href="http://www.studio7designs.com" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="STUDIO7DESIGNS LOGO"/><span>STUDIO7DESIGNS </span></a>        </li>
@@ -89,7 +86,6 @@
 			          <a href="" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="thumbnail"/><span>Image title sample </span></a>        </li>
 			        <li>
 			          <a href="" class="thumb"><img src="{{ MEDIA_URL }}/images/thumbs/01.jpg" alt="thumbnail"/><span>Image title sample </span></a>        </li>
-			      
 			      </ul>
 			{% endblock %}
     </div>
@@ -173,30 +169,5 @@
 
 </div>
 <!-- #footer end -->
-
 </body>
-
 </html>
-
-{% comment %}
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="it">
-    <head>
-        <title>Danda :: {%block pagetitle %}Home Page{% endblock %}</title>
-    </head>
-    <body>
-		<div id="header">My Site</div>
-		<div id="nav">
-		<ul>
-			<li><a href="{% url index %}">Home Page</a></li>
-			<li><a href="{% url piatti %}">Piatti</a>
-		</ul>
-		</div>
-    	<div id="content">
-    	{% block content %}
-    	{% endblock content %}
-    	</div>
-    </body>
-</html>
-{% endcomment %}
