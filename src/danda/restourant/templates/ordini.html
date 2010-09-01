@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}Ristorante {{ r{% endblock %}
+{% block title %}I tuoi ordini{% endblock %}
 
-{% block content %}
-<h1>Ristorante <b>{{r}}</b></h1>
-Indirizzo: {{r.indirizzo}}<br/>
-Numero di telefono: {{r.telefono}}</br>
+{% block content_left %}
+<h1>Bentornato <i>{{ user.username }}</i></h1>
 
-<h3>Listino Prezzi</h3>
+<a href="{% url nuovo_ordine %}">Nuovo Ordine</a>
+
 <ul>
-	{% for o in ordini %}
-	<li><a href="{% url show_ordine o.id %}">Ordine del {{ o.created }}</a>
-	{% endfor %}
+  {% for o in ordini %}
+  <li>{{ o }}</li>
+  {% endfor %}
 </ul>
-{% endblock content %}
+  
+
+{% endblock %}

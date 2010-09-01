@@ -2,20 +2,22 @@
 {% block title %}Ristorante {{ r.nome }}{% endblock %}
 
 {% block content_left %}
-<h1>Ristorante <b>{{r}}</b></h1>
-Indirizzo: {{r.indirizzo}}<br/>
-Numero di telefono: {{r.telefono}}<br/>
 <br/>
 <h3>Listino Prezzi</h3>
 <table>
-	<tr>
-		<th>Piatto</th>
-		
-	</tr>
-	{% for p in r.piatto_set.all %}
-	<tr>
-		<td>{{p.portata}}</td><td>{{p.prezzo|floatformat:2}}</td>
-	</tr>
-	{% endfor %}
+  <tr>
+    <th> </th>
+    {% for r in ristoranti %}
+    <th>{{ r }}</th>
+    {% endfor %}
+  </tr>
+  {% for p in portate %}
+  <tr>
+    <td>{{p.name}}</td>
+    {% for pp in p.piatto_set.all %}
+    <td>{{ pp.prezzo|floatformat:2 }}€ </td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
 </table>
 {% endblock content_left %}

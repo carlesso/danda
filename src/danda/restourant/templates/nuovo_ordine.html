@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}I tuoi ordini{% endblock %}
+
+{% block content_left %}
+<h1>Compila il tuo ordine, <i>{{ user.username }}</i></h1>
+
+<form method="POST" action="{% url nuovo_ordine %}">{% csrf_token %}
+  {{ f.as_p }}
+  <input type="submit" value="Inserisci" />
+</form>
+
+{% endblock %}

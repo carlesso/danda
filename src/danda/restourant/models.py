@@ -38,5 +38,6 @@ class Elemento(models.Model):
 class Ordine(models.Model):
     user = models.ForeignKey(User)
     elementi = models.ManyToManyField(Elemento)
+    ristorante = models.ForeignKey(Ristorante)
     class Meta:
         verbose_name_plural = 'Ordini'
