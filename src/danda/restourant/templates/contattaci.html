@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Contattaci{% endblock %}
+
+{% block content_left %}
+<h1>Scrivici cosa ne pensi del nostro servizio</h1>
+
+<form action="{% url contattaci %}" method="POST">
+<label for="subject">Oggetto:</label><input type="text" name="subject"/><br />
+<label for="email">Email:</label><input type="text" name="email"/><br />
+<label for="body">Test:</label><textarea  name="body"></textarea>
+<br /><br />
+<input type="submit" value="Invia" />
+
+{% endblock %}

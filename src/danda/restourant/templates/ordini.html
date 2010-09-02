@@ -8,9 +8,10 @@
 
 <ul>
   {% for o in ordini %}
-  <li>{{ o }}</li>
+  <li><a href="{% url show_ordine o.id %}">{{ o.created|date:"d M Y" }}</li>
   {% endfor %}
 </ul>
+
   
 
 {% endblock %}

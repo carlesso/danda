@@ -41,17 +41,24 @@ def nuovo_ordine(request):
     if request.method == 'POST':
         f = OrdineForm(request.POST)
         if f.is_valid():
-            print "CCCA"
-            print f.cleaned_data
             r = Ristorante.objects.get(id = int(f.cleaned_data.pop('restourant')))
             a = Ordine(user = request.user, ristorante = r)
             a.save()
             for k in f.cleaned_data:
-                p = Portata.objects.get(id = int(k))
-                e = Elemento(piatto = Piatto.objects.get(portata = p, ristorante = r), numero = f.cleaned_data[k])
-                e.save()
-                a.elementi.add(e)
+                if f.cleaned_data[k] > 0:
+                    p = Portata.objects.get(id = int(k))
+                    e = Elemento(piatto = Piatto.objects.get(portata = p, ristorante = r), numero = f.cleaned_data[k])
+                    e.save()
+                    a.elementi.add(e)
+            return HttpResponseRedirect('/ordini/%d' % a.id)
     else:
         f = OrdineForm()
     return render_to_response('nuovo_ordine.html', RequestContext(request, {'f': f}))
 
+from django.views.decorators.csrf import csrf_exempt
+@csrf_exempt
+def contattaci(request):
+    if request.method == 'POST':
+        print request.POST
+        return render_to_response('contattati.html', RequestContext(request, {}))
+    return render_to_response('contattaci.html', RequestContext(request, {}))

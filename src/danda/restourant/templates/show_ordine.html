@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Il tuo ordine{% endblock %}
+
+{% block content_left %}
+<h1>Il tuo ordine di {{ ordine.created|date:"d M Y" }}</h1>
+
+<h3>Presso il ristorante <i>{{ ordine.ristorante }}</i></h3>
+
+<ul>
+{% for e in ordine.elementi.all %}
+<li>{{ e.numero }} - {{ e.piatto.portata }} ({{ e.numero }} x € {{ e.piatto.prezzo|floatformat:2 }} = <b>€ {{ e.totale|floatformat:2 }}</b>)</li>
+{% endfor %}
+</ul>
+
+<h2>Totale: {{ ordine.totale|floatformat:2 }} €</h2>
+
+<h3>Ecco il prezzo di questo ordine negli altri ristoranti</h3>
+<ul>
+  {% for i in ordine.altri_ristoranti %}
+  {{ i }}<br />
+  {% endfor %}
+</ul>
+
+
+{% endblock %}
